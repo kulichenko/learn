@@ -15,8 +15,9 @@ public class SavitchEx5 {
         gap_2 = words.lastIndexOf(" ");
         String words1 = words.substring(0, gap_1);
         String words2 = words.substring(gap_2);
-        System.out.println(words+ " " + words1 + " " + words2+ " " +gap_1 + " " + gap_2);
-        //System.out.println("Yor phrase: " + words2 + " " + words1);
+        String words3 = words.substring(gap_1, gap_2);
+        //System.out.println(words+ " " + words1 + " " + words2+ " " +gap_1 + " " + gap_2);
+        System.out.println("Yor phrase: " + words2 +  words3 + " " + words1);
 
 
 
