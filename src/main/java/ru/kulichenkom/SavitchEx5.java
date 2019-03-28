@@ -1,5 +1,5 @@
 //Программа должна прочесть строку текста, после чего выводит ее,
-//* переместив первое слово в конец строки.
+// переместив первое слово в конец строки.
 package ru.kulichenkom;
 import java.util.Scanner;
 
@@ -10,18 +10,14 @@ public class SavitchEx5 {
         Scanner in = new Scanner(System.in);
         String words = in.nextLine();
         in.close();
-        int gap_1, gap_2;
-        gap_1 = words.indexOf(" ");
-        gap_2 = words.lastIndexOf(" ");
-        String words1 = words.substring(0, gap_1);
-        String words2 = words.substring(gap_2);
-        String words3 = words.substring(gap_1, gap_2);
+        int gapFirst, gapLast;
+        gapFirst = words.indexOf(" ");
+        gapLast = words.lastIndexOf(" ");
+        String words1 = words.substring(0, gapFirst);
+        String words2 = words.substring(gapLast);
+        String words3 = words.substring(gapFirst, gapLast);
         //System.out.println(words+ " " + words1 + " " + words2+ " " +gap_1 + " " + gap_2);
         System.out.println("Yor phrase: " + words2 +  words3 + " " + words1);
-
-
-
-
     }
 
 }
