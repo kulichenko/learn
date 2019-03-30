@@ -1,7 +1,5 @@
 package ru.kulichenkom;
-
 import javax.swing.*;
-
 public class SavitchCh2Ex11 {
     public static void main(String[] args) {
         String appleString;
@@ -14,7 +12,6 @@ public class SavitchCh2Ex11 {
         int totalNumbersOfClams;
         totalNumbersOfClams = appleCount * clamsPerAppleCount;
         JOptionPane.showMessageDialog(null, "Стоимость всех яблок " + totalNumbersOfClams);
-
         System.exit(0);
     }
 }
