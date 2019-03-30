@@ -9,5 +9,6 @@ public class SavitchCh2Ex8 {
         double deegreesF = in.nextDouble();
         double degreesC = 5 * (deegreesF - 32) / 9;
         System.out.println(deegreesF + "degrees F = " + degreesC + " degrees in C");
+        in.close();
     }
 }
