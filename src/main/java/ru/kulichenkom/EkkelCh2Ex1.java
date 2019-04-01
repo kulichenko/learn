@@ -3,6 +3,10 @@
 package ru.kulichenkom;
 
 public class EkkelCh2Ex1 {
+
+    private int i;
+    private char ch;
+
     public int getI() {
         return i;
     }
@@ -17,14 +21,5 @@ public class EkkelCh2Ex1 {
 
     public void setCh(char ch) {
         this.ch = ch;
-    }
-
-    private int i;
-    private char ch;
-
-    public static void main(String[] arg) {
-        EkkelCh2Ex1 testObject = new EkkelCh2Ex1();
-        System.out.println("integer is :" + testObject.getI());
-        System.out.println("Char is: " + testObject.getCh());
     }
 }
