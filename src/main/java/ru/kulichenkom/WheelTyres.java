@@ -6,6 +6,10 @@
 package ru.kulichenkom;
 
 public class WheelTyres {
+    private int width; //ширина шины
+    private int profileHeight; //высота профиля шины
+    private int rimDiameter; //диаметр обода
+
     public int getWidth() {
         return width;
     }
@@ -29,19 +33,11 @@ public class WheelTyres {
     public void setRimDiameter(int rimDiameter) {
         this.rimDiameter = rimDiameter;
     }
-
-    int width; //ширина шины
-    int profileHeight; //высота профиля шины
-    int rimDiameter; //диаметр обода
-
     public static void main(String[] args) {
-
         WheelTyres wheelOne = new WheelTyres();
         wheelOne.setWidth(195);
         wheelOne.setProfileHeight(65);
         wheelOne.setRimDiameter(15);
         System.out.println(wheelOne.getWidth() + "/" + wheelOne.getProfileHeight() + "/" + wheelOne.getRimDiameter());
-        //System.out.println(wheelOne.getProfileHeight());
-         //System.out.println(wheelOne.getRimDiameter());
     }
 }
