@@ -26,6 +26,5 @@ public class StorageCh2Ex6 {
         StorageCh2Ex6 example = new StorageCh2Ex6();
         System.out.println(example.storage("trakataka"));
         System.out.println(example.naturalLogBase());
-
     }
 }
