@@ -37,11 +37,11 @@ public class WheelTyres {
     public static void main(String[] args) {
 
         WheelTyres wheelOne = new WheelTyres();
-        wheelOne.width = 195;
-        wheelOne.profileHeight = 65;
-        wheelOne.rimDiameter = 15;
+        wheelOne.setWidth(195);
+        wheelOne.setProfileHeight(65);
+        wheelOne.setRimDiameter(15);
         System.out.println(wheelOne.getWidth() + "/" + wheelOne.getProfileHeight() + "/" + wheelOne.getRimDiameter());
         //System.out.println(wheelOne.getProfileHeight());
-        //System.out.println(wheelOne.getRimDiameter());
+         //System.out.println(wheelOne.getRimDiameter());
     }
 }
