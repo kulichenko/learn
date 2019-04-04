@@ -18,9 +18,5 @@ public class Wrappers {
         System.out.println(d);
         System.out.println(boo);
         System.out.println(by);
-
-
-
     }
-
 }
