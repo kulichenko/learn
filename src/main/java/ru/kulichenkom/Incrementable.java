@@ -14,15 +14,13 @@ public class Incrementable {
 
     static int i = 100;
 
-    static int increment() {
-        return Incrementable.i++;
-    }
+    static void increment() {Incrementable.i++;}
 
     public static void main(String[] args) {
         Incrementable st1 = new Incrementable();
         Incrementable st2 = new Incrementable();
-        System.out.println("At first st1=" + i + " as well as st2=" + i);
+        System.out.println("At first st1=" + st1.i + " as well as st2=" + st2.i);
         Incrementable.increment();
-        System.out.println("After usage increment() st1= " + st1.increment() + " st2= " + st2.increment());
+        System.out.println("After usage increment() st1= " + st1.i + " st2= " + st2.i);
     }
 }
