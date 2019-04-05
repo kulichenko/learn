@@ -3,13 +3,14 @@
 package ru.kulichenkom;
 
 public class CommandLine {
-
-
-           public static void main(String[] args) {
-                       System.out.println("Всего аргументов в командной строке: "+args.length);
-            for (int i = 0; i<=2; i++)
-                   System.out.println(args[i]);
-
+    public static void main(String[] args) {
+        System.out.println("Всего аргументов в командной строке: " + args.length);
+        for (int i = 0; i < args.length; i++) {
+            if (i > 2)
+                break;
+            System.out.println(args[i]);
         }
     }
+}
+
 
