@@ -9,21 +9,6 @@ public class Dog {
     String name;
     String says;
 
-    public static void main(String[] args) {
-        Dog spot = new Dog();
-        Dog scruffy = new Dog();
-        spot.setName("Spot");
-        scruffy.setName("Scruffy");
-        spot.setSays("Hello!");
-        scruffy.setSays("Good morning!");
-        System.out.println(spot.getName() + " said: " + spot.getSays());
-        System.out.println(scruffy.getName() + " said: " + scruffy.getSays());
-        Dog dog = new Dog();
-        spot = dog;
-        System.out.println(spot.equals(dog));
-        System.out.println(spot == dog);
-    }
-
     public String getName() {
         return name;
     }
@@ -39,4 +24,20 @@ public class Dog {
     public void setSays(String says) {
         this.says = says;
     }
+
+    public static void main(String[] args) {
+        Dog spot = new Dog();
+        Dog scruffy = new Dog();
+        spot.setName("Spot");
+        scruffy.setName("Scruffy");
+        spot.setSays("Hello!");
+        scruffy.setSays("Good morning!");
+        System.out.println(spot.getName() + " said: " + spot.getSays());
+        System.out.println(scruffy.getName() + " said: " + scruffy.getSays());
+        Dog dog = new Dog();
+        spot = dog;
+        System.out.println(spot.equals(dog));
+        System.out.println(spot == dog);
+    }
+
 }
