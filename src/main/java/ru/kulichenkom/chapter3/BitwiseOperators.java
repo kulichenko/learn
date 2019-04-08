@@ -13,7 +13,6 @@
 //use hexadecimal constants for this). Take these two values and combine them in
 //all possible ways using the bitwise operators, and display the results using
 //Integer.toBinaryString().
-//
 
 package ru.kulichenkom.chapter3;
 
