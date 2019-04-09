@@ -1,5 +1,6 @@
 package ru.kulichenkom;
 
+import ru.kulichenkom.domain.WheelTyres;
 import ru.kulichenkom.ekkel.chapter2.DataOnlyCh2Ex4;
 import ru.kulichenkom.ekkel.chapter2.EkkelCh2Ex1;
 import ru.kulichenkom.ekkel.chapter2.WheelTyresMain;
@@ -13,7 +14,7 @@ public class Main {
         System.out.println(data.getI());
         System.out.println(data.isB());
         System.out.println(data.getD());
-        WheelTyresMain wheelOne = new WheelTyresMain();
+        WheelTyres wheelOne = new WheelTyres();
         wheelOne.setWidth(195);
         wheelOne.setProfileHeight(65);
         wheelOne.setRimDiameter(15);
