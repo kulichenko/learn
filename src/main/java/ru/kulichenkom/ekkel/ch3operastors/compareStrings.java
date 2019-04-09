@@ -5,16 +5,11 @@
 package ru.kulichenkom.ekkel.ch3operastors;
 
 public class compareStrings {
-    static void f(boolean b) {
-        if (b) System.out.print("true\n");
-        else System.out.print("false\n");
-    }
-
     static void stringTest(String s1, String s2) {
-        f(s1 == s2);
-        f(s1 != s2);
-        f(s1.equals(s2));
-        f(s2.equals(s1));
+        System.out.println(s1 == s2);
+        System.out.println(s1 != s2);
+        System.out.println(s1.equals(s2));
+        System.out.println(s2.equals(s1));
     }
 
     public static void main(String[] args) {
