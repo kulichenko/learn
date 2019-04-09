@@ -6,6 +6,8 @@ package ru.kulichenkom.chapter3;
 
 public class compareStrings {
     static void f(boolean b) {
+        if (b == true) System.out.print("true\n");
+        else System.out.print("false\n");
     }
 
     static void stringTest(String s1, String s2) {
