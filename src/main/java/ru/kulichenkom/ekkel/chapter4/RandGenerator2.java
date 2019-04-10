@@ -6,11 +6,10 @@ import java.util.Random;
 public class RandGenerator2 {
     public static void main(String[] args) {
         int randPrev = 0;
-        int i = 1;
-        while (i > 0) {
+        while (true) {
             Random value = new Random();
             int rand = value.nextInt();
-            System.out.println(i + "-ое число: " + rand);
+            System.out.println(rand);
             if (randPrev < rand)
                 System.out.println(randPrev + "<" + rand);
             else if (randPrev > rand)
@@ -18,7 +17,6 @@ public class RandGenerator2 {
             else
                 System.out.println(randPrev + "=" + rand);
             randPrev = rand;
-            i++;
         }
     }
 }

@@ -4,7 +4,7 @@
 // свой метод из main() для нескольких разных объектов String
 package ru.kulichenkom.ekkel.ch3operastors;
 
-public class compareStrings {
+public class CompareStrings {
     static void stringTest(String s1, String s2) {
         System.out.println(s1 == s2);
         System.out.println(s1 != s2);

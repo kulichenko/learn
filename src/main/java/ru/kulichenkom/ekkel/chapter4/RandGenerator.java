@@ -7,10 +7,10 @@ import java.util.Random;
 public class RandGenerator {
     public static void main(String[] args) {
         int randPrev = 0;
-        for (int i = 1; i <= 25; i++) {
+        for (int i = 0; i < 25; i++) {
             Random value = new Random();
             int rand = value.nextInt();
-            System.out.println(i + "-ое число: " + rand);
+            System.out.println((i + 1) + "-ое число: " + rand);
             if (randPrev < rand)
                 System.out.println(randPrev + "<" + rand);
             else if (randPrev > rand)
