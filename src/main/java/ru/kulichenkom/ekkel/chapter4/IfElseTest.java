@@ -2,8 +2,9 @@
 //begin и end, а значение testval проверялось на принадлежность к диапазону [begin, end]
 package ru.kulichenkom.ekkel.chapter4;
 
-public class ifElseTest {
-    static int test(int testval, int begin, int end) {
+public class IfElseTest {
+
+    public static int test(int testval, int begin, int end) {
         if ((testval > begin && (testval < end)))
             return +1;
         else if ((testval < begin) || (testval > end))
