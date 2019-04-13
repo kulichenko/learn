@@ -1,6 +1,6 @@
 //Ch5Ex1 Создайте класс с неинициализированной ссылкой на String. Покажите
 //что Java инициализирует ссылку значением null
-package ru.kulichenkom.ekkel;
+package ru.kulichenkom.ekkel.chapter5;
 
 public class StringNull {
     String field;
