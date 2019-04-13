@@ -5,21 +5,27 @@
 package ru.kulichenkom.ekkel.chapter4;
 
 public class Fibonacci {
-    private static void fibonacci(int count) {
+    public static void main(String[] args) {
+        Fibonacci fibonacci = new Fibonacci();
+        System.out.println(fibonacci.fibonacci(5));
+    }
+
+    public String fibonacci(int count) {
         int prevNumber = 0;
         int currentNumber = 1;
+        String result = null;
         for (int i = 0; i < count - 1; i++) {
             if (i == 0) {
-                System.out.print(currentNumber + ", ");
+                result = currentNumber + ", ";
             }
             int nextNumber = currentNumber + prevNumber;
-            System.out.print(nextNumber + ", ");
+            if (i == count - 2) {
+                result = result + nextNumber;
+            } else
+                result = result + nextNumber + ", ";
             prevNumber = currentNumber;
             currentNumber = nextNumber;
         }
-    }
-
-    public static void main(String[] args) {
-        fibonacci(5);
+        return result;
     }
 }
