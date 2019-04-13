@@ -5,11 +5,13 @@
 package ru.kulichenkom.ekkel.chapter4;
 
 public class Fibonacci {
-    private static void fibonacci(int number) {
+    private static void fibonacci(int count) {
         int prevNumber = 0;
-        int currentNumber = prevNumber + 1;
-        System.out.print(1 + ", ");
-        for (int i = 0; i < number - 1; i++) {
+        int currentNumber = 1;
+        for (int i = 0; i < count - 1; i++) {
+            if (i == 0) {
+                System.out.print(currentNumber + ", ");
+            }
             int nextNumber = currentNumber + prevNumber;
             System.out.print(nextNumber + ", ");
             prevNumber = currentNumber;
