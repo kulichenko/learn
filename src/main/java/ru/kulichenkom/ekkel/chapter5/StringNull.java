@@ -9,13 +9,12 @@ public class StringNull {
         this.field = s;
     }
 
+    public String getField() {
+        return field;
+    }
+
     public static void main(String[] args) {
         StringNull snull = new StringNull("какая-то строка");
         System.out.println(snull.getField());
-
-    }
-
-    public String getField() {
-        return field;
     }
 }

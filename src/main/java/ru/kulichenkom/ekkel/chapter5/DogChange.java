@@ -18,7 +18,6 @@ public class DogChange {
         DogChange dog = new DogChange();
         dog.bark((byte) 2, 'd');
         dog.bark('d', (byte) 2);
-
     }
 }
 
