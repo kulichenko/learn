@@ -1,23 +1,23 @@
-//Ch5Ex15 программа не сработала Exception in thread "main" java.lang.StackOverflowError
-//at ru.kulichenkom.ekkel.chapter5.InitialOfInstance.<init>(InitialOfInstance.java:14)
-// Саздайте класс, производный от String, инициализируемый в секции
+//Ch5Ex15 Саздайте класс, производный от String, инициализируемый в секции
 //инициализации экземпляра
 package ru.kulichenkom.ekkel.chapter5;
 
+class Instance {
+    Instance(String furniture) {
+        System.out.println("Furniture: " + furniture);
+    }
+}
+
 public class InitialOfInstance {
-    InitialOfInstance firstFurniture;
-    InitialOfInstance secondFurniture;
+    private Instance firstFurniture;
+    private Instance secondFurniture;
 
     {
-        firstFurniture = new InitialOfInstance("Sofa");
-        secondFurniture = new InitialOfInstance("Chair");
+        firstFurniture = new Instance("Sofa");   //секция инициализации экземпляра
+        secondFurniture = new Instance("Chair");
     }
 
-    public InitialOfInstance(String furniture) {
-        System.out.println(furniture);
-    }                                       //секция инициализации экземпляра
-
     public static void main(String[] args) {
-        new InitialOfInstance("Bed");
+        new InitialOfInstance();
     }
 }
