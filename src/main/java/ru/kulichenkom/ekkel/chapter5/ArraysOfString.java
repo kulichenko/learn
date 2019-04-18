@@ -8,6 +8,10 @@ package ru.kulichenkom.ekkel.chapter5;
 class ArraysOfBird {
     private String bird;
 
+    public String getBird() {
+        return bird;
+    }
+
     ArraysOfBird(String bird) {
         this.bird = bird;
         System.out.println(bird);
@@ -18,10 +22,8 @@ public class ArraysOfString {
 
     public static void main(String[] args) {
         ArraysOfBird[] forest = new ArraysOfBird[3];
-        {
-            new ArraysOfBird("утка ");
-            new ArraysOfBird("Куропатка ");
-            new ArraysOfBird("Тетерев ");
-        }
+        forest[0] = new ArraysOfBird("Утка");
+        forest[1] = new ArraysOfBird("Куропатка");
+        forest[2] = new ArraysOfBird("Тетерев");
     }
 }

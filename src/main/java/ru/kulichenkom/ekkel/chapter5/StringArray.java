@@ -7,8 +7,12 @@ public class StringArray {
 
     public static void main(String[] args) {
         StringArray arrayOfTrees = new StringArray();
-        for (int i = 0; i < arrayOfTrees.trees.length; i++) {
-            System.out.print(arrayOfTrees.trees[i]);
+        for (int i = 0; i < arrayOfTrees.getTrees().length; i++) {
+            System.out.print(arrayOfTrees.getTrees()[i]);
         }
+    }
+
+    public String[] getTrees() {
+        return trees;
     }
 }

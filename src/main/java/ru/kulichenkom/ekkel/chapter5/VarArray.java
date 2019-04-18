@@ -5,14 +5,14 @@ package ru.kulichenkom.ekkel.chapter5;
 
 public class VarArray {
 
+    private void street(String... streets) {
+        for (String s : streets)
+            System.out.print(s);
+    }
+
     public static void main(String[] args) {
         VarArray varArray = new VarArray();
         varArray.street("Клубная, ", "Школьная, ", "Караминская,");
         varArray.street(" Клубная 11, ", "Школьная 15, ", "Караминская 19");
-    }
-
-    private void street(String... streets) {
-        for (String s : streets)
-            System.out.print(s);
     }
 }
