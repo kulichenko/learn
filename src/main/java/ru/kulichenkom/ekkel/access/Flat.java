@@ -20,7 +20,6 @@ public class Flat {
         this.typeOfObject = typeOfObject;
     }
 
-
     public int getRoomQty() {
         return roomQty;
     }
