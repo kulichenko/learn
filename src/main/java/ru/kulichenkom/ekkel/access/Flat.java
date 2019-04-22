@@ -16,7 +16,7 @@ public class Flat {
         return typeOfObject;
     }
 
-    public Flat setTypeOfObject(String typeOfObject) {
+    public Flat withTypeOfObject(String typeOfObject) {
         this.typeOfObject = typeOfObject;
         return this;
     }
@@ -25,7 +25,7 @@ public class Flat {
         return roomQty;
     }
 
-    public Flat setRoomQty(int roomQty) {
+    public Flat withRoomQty(int roomQty) {
         this.roomQty = roomQty;
         return this;
     }
@@ -34,7 +34,7 @@ public class Flat {
         return floor;
     }
 
-    public Flat setFloor(int floor) {
+    public Flat withFloor(int floor) {
         this.floor = floor;
         return this;
     }
@@ -43,7 +43,7 @@ public class Flat {
         return bathroomQty;
     }
 
-    public Flat setBathroomQty(int bathroomQty) {
+    public Flat withBathroomQty(int bathroomQty) {
         this.bathroomQty = bathroomQty;
         return this;
     }
