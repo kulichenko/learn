@@ -1,4 +1,6 @@
-package ru.kulichenkom.ekkel.access;
+package ru.kulichenkom.ekkel.chapter6.access2;
+
+import ru.kulichenkom.ekkel.chapter6.access.Cars;
 
 public class CarSecond {
     public static void main(String[] args) {
@@ -7,6 +9,6 @@ public class CarSecond {
                 .withPowerValue(105)
                 .withNumOfCylinders(4)
                 .withNumOfGears(5);
-        car.descriptionOfCar();
+        //car.descriptionOfCar(); - доступа к методу нет
     }
 }

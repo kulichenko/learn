@@ -1,7 +1,7 @@
 //Ch6Ex1 Определите класс в пакете. Создайте экземпляр класса
 //за пределами пакета. Экземпляр создан  в пакете access2
 
-package ru.kulichenkom.ekkel.access;
+package ru.kulichenkom.ekkel.chapter6.access;
 
 public class Flat {
     private int roomQty, floor, bathroomQty;

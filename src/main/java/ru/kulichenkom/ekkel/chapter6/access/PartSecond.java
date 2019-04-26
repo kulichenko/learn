@@ -1,4 +1,4 @@
-package ru.kulichenkom.ekkel.access;
+package ru.kulichenkom.ekkel.chapter6.access;
 
 public class PartSecond {
     public static void main(String[] args) {

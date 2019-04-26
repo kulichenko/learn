@@ -4,7 +4,7 @@
 //статического метода класса ConnectionManager. Когда запас объектов у класса ConnectionManager
 // закончится, он должен вернуть ссылку null. Протестируйте классы в методе main().
 //
-package ru.kulichenkom.ekkel.access;
+package ru.kulichenkom.ekkel.chapter6.access;
 
 class Connection {
     private int conNumber;

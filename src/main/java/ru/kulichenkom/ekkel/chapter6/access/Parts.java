@@ -1,7 +1,7 @@
 //Ch6Ex5 Создайте класс с полями и методами, обладающими разными уровнями доступа public, private,
 //protected, в пределах пакета. Создайте объект этого класса и посмотрите какие сообщения выдает компилятор
 //при поптыке обращения к разным членам класса. (Дополнительные классы access/PartSecond, access2/PartSecond)
-package ru.kulichenkom.ekkel.access;
+package ru.kulichenkom.ekkel.chapter6.access;
 
 public class Parts {
     public String secondPart;

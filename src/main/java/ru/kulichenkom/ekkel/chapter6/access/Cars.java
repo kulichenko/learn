@@ -1,6 +1,6 @@
 //Ch6Ex4 Покажите, что методы со спецификатором protected обладают доступом в пределах пакета,
 //но не являются открытыми. Класс внутри пакета - CarSecond, в соседнем пакете access2 - CarSecond
-package ru.kulichenkom.ekkel.access;
+package ru.kulichenkom.ekkel.chapter6.access;
 
 public class Cars {
     String typeOfCars;

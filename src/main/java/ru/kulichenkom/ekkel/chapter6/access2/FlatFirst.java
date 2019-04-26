@@ -1,6 +1,6 @@
-package ru.kulichenkom.ekkel.access2;
+package ru.kulichenkom.ekkel.chapter6.access2;
 
-import ru.kulichenkom.ekkel.access.Flat;
+import ru.kulichenkom.ekkel.chapter6.access.Flat;
 
 public class FlatFirst {
     public static void main(String[] args) {

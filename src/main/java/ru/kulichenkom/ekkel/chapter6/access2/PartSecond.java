@@ -1,6 +1,6 @@
-package ru.kulichenkom.ekkel.access2;
+package ru.kulichenkom.ekkel.chapter6.access2;
 
-import ru.kulichenkom.ekkel.access.Parts;
+import ru.kulichenkom.ekkel.chapter6.access.Parts;
 
 public class PartSecond {
     public static void main(String[] args) {
