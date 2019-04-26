@@ -7,27 +7,44 @@
 package ru.kulichenkom.ekkel.access;
 
 class Connection {
-    Connection() {
+    private int conNumber;
+
+    public Connection(int conNumber) {
+        this.conNumber = conNumber;
+    }
+
+    @Override
+    public String toString() {
+        return "This is connection #" + conNumber;
     }
 }
 
 public class ConnectionManager {
-    private static Connection[] connect = new Connection[10];
+    private static int thisConnect = 0;
+    private static Connection[] connect = new Connection[15];
+
+    static {
+        for (int i = 0; i < connect.length; i++) {
+            connect[i] = new Connection(i);
+        }
+    }
 
     private ConnectionManager() {
     }
 
     private static Connection makeConnection() {
-        for (int i = 0; i != connect.length; ++i) {
-            if (connect[i] == null) {
-                connect[i] = new Connection();
-                System.out.println(connect[i]);
-            }
-        }
-        return null;
+        if (thisConnect < connect.length) {
+            Connection con = connect[thisConnect];
+            thisConnect++;
+            return con;
+        } else
+            return null;
     }
 
     public static void main(String[] args) {
-        ConnectionManager.makeConnection();
+        for (int i = 0; i <= connect.length; i++) {
+            Connection con = ConnectionManager.makeConnection();
+            System.out.println(con);
+        }
     }
 }
