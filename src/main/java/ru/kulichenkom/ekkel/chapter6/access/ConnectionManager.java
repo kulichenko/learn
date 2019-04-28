@@ -21,7 +21,7 @@ class Connection {
 
 public class ConnectionManager {
     private static int thisConnect = 0;
-    private static Connection[] connect = new Connection[15];
+    private static Connection[] connect = new Connection[10];
 
     static {
         for (int i = 0; i < connect.length; i++) {
@@ -32,7 +32,7 @@ public class ConnectionManager {
     private ConnectionManager() {
     }
 
-    private static Connection makeConnection() {
+    public static Connection makeConnection() {
         if (thisConnect < connect.length) {
             Connection con = connect[thisConnect];
             thisConnect++;
@@ -40,11 +40,5 @@ public class ConnectionManager {
         } else
             return null;
     }
-
-    public static void main(String[] args) {
-        for (int i = 0; i <= connect.length; i++) {
-            Connection con = ConnectionManager.makeConnection();
-            System.out.println(con);
-        }
-    }
 }
+

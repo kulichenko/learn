@@ -8,8 +8,6 @@ class Meter {
     private int coldWater, hotWater;
 
     public Meter() {
-        this.coldWater = coldWater;
-        this.hotWater = hotWater;
     }
 
     public String toString() {
