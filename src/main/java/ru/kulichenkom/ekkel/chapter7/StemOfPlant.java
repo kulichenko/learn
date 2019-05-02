@@ -8,7 +8,7 @@
 package ru.kulichenkom.ekkel.chapter7;
 
 class Comp1 {
-    int leaf;
+    private int leaf;
 
     public Comp1(int leaf) {
         this.leaf = leaf;
@@ -17,7 +17,7 @@ class Comp1 {
 }
 
 class Comp2 {
-    int twig;
+    private int twig;
 
     public Comp2(int twig) {
         this.twig = twig;
@@ -26,7 +26,7 @@ class Comp2 {
 }
 
 class Comp3 {
-    int ring;
+    private int ring;
 
     public Comp3(int ring) {
         this.ring = ring;
@@ -35,7 +35,7 @@ class Comp3 {
 }
 
 class RootOfPlant {
-    int rootQty;
+    private int rootQty;
     Comp1 comp1 = new Comp1(150);
     Comp2 comp2 = new Comp2(20);
     Comp3 comp3 = new Comp3(15);
@@ -47,7 +47,7 @@ class RootOfPlant {
 }
 
 public class StemOfPlant extends RootOfPlant {
-    int length;
+    private int length;
 
     public StemOfPlant(int rootQty, int length) {
         super(rootQty);
