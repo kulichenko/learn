@@ -18,12 +18,19 @@ class Doors {
 }
 
 public class InteriorDoor extends Doors {
-    public InteriorDoor(int height, int width, int thickness, String typeOfDoor) {
+    private boolean withHandle;
+
+    public InteriorDoor() {
+        super(2000, 600, 60, "Bathroom Door");
+    }
+
+    public InteriorDoor(int height, int width, int thickness, String typeOfDoor, boolean withHandle) {
         super(height, width, thickness, typeOfDoor);
-        System.out.println(height + "//" + width + "//" + thickness + " " + typeOfDoor);
+        this.withHandle = withHandle;
     }
 
     public static void main(String[] args) {
-        InteriorDoor door = new InteriorDoor(2000, 900, 60, "Door without glass");
+        InteriorDoor bathDoor = new InteriorDoor();
+        InteriorDoor door = new InteriorDoor(2000, 900, 60, "Door without glass. Handle on the door: ", true);
     }
 }
