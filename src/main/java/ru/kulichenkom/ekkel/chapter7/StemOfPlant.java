@@ -44,7 +44,6 @@ class RootOfPlant {
         this.rootQty = rootQty;
         System.out.println("Root system consist of " + rootQty + " roots");
     }
-
 }
 
 public class StemOfPlant extends RootOfPlant {
