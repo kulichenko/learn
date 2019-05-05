@@ -4,11 +4,13 @@
 package ru.kulichenkom.ekkel.chapter8;
 
 public class Cycle {
+    private String name = "Cycle";
+
     Cycle() {
         System.out.println("Constructor Cycle");
     }
 
-    public static void toRide(Cycle cycle) {
-        System.out.println("Cycle.toRide()");
+    public void toRide() {
+        System.out.println("This is cycle with name " + this.name + " and its riding now");
     }
 }

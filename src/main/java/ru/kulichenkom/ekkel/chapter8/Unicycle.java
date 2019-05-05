@@ -6,7 +6,7 @@ package ru.kulichenkom.ekkel.chapter8;
 public class Unicycle extends Cycle {
     private String name = "Unicycle";
 
-    public String toString() {
-        return this.name;
+    public void toRide() {
+        System.out.println("This is cycle with name " + this.name + " and its riding now");
     }
 }

@@ -3,16 +3,16 @@
 //Cycle, на примере вызова метода ride().
 package ru.kulichenkom.ekkel.chapter8;
 
-import static ru.kulichenkom.ekkel.chapter8.Cycle.toRide;
-
 public class Biking {
 
     public static void main(String[] args) {
-        Unicycle unicycle = new Unicycle();
-        Bicycle bicycle = new Bicycle();
-        Tricycle tricycle = new Tricycle();
-        toRide(unicycle);
-        toRide(bicycle);
-        toRide(tricycle);
+        Cycle cycle = new Cycle();
+        Cycle unicycle = new Unicycle();
+        Cycle bicycle = new Bicycle();
+        Cycle tricycle = new Tricycle();
+        unicycle.toRide();
+        bicycle.toRide();
+        tricycle.toRide();
+        cycle.toRide();
     }
 }
