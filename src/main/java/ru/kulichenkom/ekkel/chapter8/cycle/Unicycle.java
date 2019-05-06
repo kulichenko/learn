@@ -4,16 +4,15 @@
 package ru.kulichenkom.ekkel.chapter8.cycle;
 
 public class Unicycle extends Cycle {
-    private String name = "Unicycle";
+    private String name = "unicycle";
     private int qtyWheels = 1;
 
     public void toRide() {
+        System.out.print("This is cycle with name " + this.name + " and its riding now ");
         wheels();
-        System.out.println("This is cycle with name " + this.name + " and its riding now");
     }
 
-    public int wheels() {
-        System.out.println(this.name + " move on " + qtyWheels + " wheel");
-        return qtyWheels;
+    public void wheels() {
+        System.out.println("on " + qtyWheels + " wheel");
     }
 }

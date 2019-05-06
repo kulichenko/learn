@@ -4,16 +4,15 @@
 package ru.kulichenkom.ekkel.chapter8.cycle;
 
 public class Bicycle extends Cycle {
-    private String name = "Bicycle";
+    private String name = "bicycle";
     private int qtyWheels = 2;
 
     public void toRide() {
+        System.out.print("This is cycle with name " + this.name + " and its riding now ");
         wheels();
-        System.out.println("This is cycle with name " + this.name + " and its riding now");
     }
 
-    public int wheels() {
-        System.out.println(this.name + " move on " + qtyWheels + " wheels");
-        return qtyWheels;
+    public void wheels() {
+        System.out.println("on " + qtyWheels + " wheels");
     }
 }

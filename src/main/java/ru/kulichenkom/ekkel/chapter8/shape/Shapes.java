@@ -15,14 +15,14 @@ public class Shapes {
     public static void main(String[] args) {
         Shape[] shapes = new Shape[8];
         //Заполняем массив фигурами:
-        for (int i = 0; i < shapes.length; i++)
+        for (int i = 0; i < shapes.length; i++) {
             shapes[i] = generator.next();
+        }
         //Полиморфные вызовы методов:
-        for (Shape shp : shapes)
+        for (Shape shp : shapes) {
             shp.draw();
-        for (Shape shp : shapes)
             shp.erase();
-        for (Shape shp : shapes)
             shp.move();
+        }
     }
 }

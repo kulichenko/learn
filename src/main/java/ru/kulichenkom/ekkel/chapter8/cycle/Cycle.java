@@ -11,12 +11,11 @@ public class Cycle {
     private int qtyWheels = 0;
 
     public void toRide() {
+        System.out.print("This is cycle with name " + this.name + " and its riding now ");
         wheels();
-        System.out.println("This is cycle with name " + this.name + " and its riding now");
     }
 
-    public int wheels() {
-        System.out.println(qtyWheels);
-        return qtyWheels;
+    public void wheels() {
+        System.out.println("on " + qtyWheels + " wheels");
     }
 }
