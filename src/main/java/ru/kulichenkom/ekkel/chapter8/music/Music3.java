@@ -1,3 +1,6 @@
+//Ch8Ex7 Добавьте новый подтип Instrument в программу Music3.java.
+//Убедитесь в том, что полиморфизм работает правильно и для этого
+//нового типа (добавлен подтип Tambourine)
 //Ch8Ex6 Измените программу Music3.java так, чтобы метод what() стал методом
 //корневого класса Object toString(). Попробуйте вывести информацию об объектах
 //Instrument вызовом System.out.println() (без использования преобразований)
@@ -47,6 +50,20 @@ class Percussion extends Instrument {
     }
 }
 
+class Tambourine extends Percussion {
+    void play(Note n) {
+        System.out.println("Tambourine.play() " + n);
+    }
+
+    public String toString() {
+        return "Tambourine";
+    }
+
+    void adjust() {
+        System.out.println("Adjusting Tambourine");
+    }
+}
+
 class Stringed extends Instrument {
     void play(Note n) {
         System.out.println("Stringed.play() " + n);
@@ -87,6 +104,7 @@ public class Music3 {
     public static void tune(Instrument i) {
 // ...
         i.play(Note.MIDDLE_C);
+        i.play(Note.B_FLAT);
     }
 
     public static void tuneAll(Instrument[] e) {
@@ -100,6 +118,7 @@ public class Music3 {
         Instrument[] orchestra = {
                 new Wind(),
                 new Percussion(),
+                new Tambourine(),
                 new Stringed(),
                 new Brass(),
                 new Woodwind()
