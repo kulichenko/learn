@@ -1,3 +1,7 @@
+//Ch8Ex6 Измените программу Music3.java так, чтобы метод what() стал методом
+//корневого класса Object toString(). Попробуйте вывести информацию об объектах
+//Instrument вызовом System.out.println() (без использования преобразований)
+//****************************************************************************
 //Пакет .music - пример из книги, по нему будут несколько следующих заданий
 package ru.kulichenkom.ekkel.chapter8.music;
 
@@ -6,7 +10,7 @@ class Instrument {
         System.out.println("Instrument.play() " + n);
     }
 
-    String what() {
+    public String toString() {
         return "Instrument";
     }
 
@@ -20,7 +24,7 @@ class Wind extends Instrument {
         System.out.println("Wind.play() " + n);
     }
 
-    String what() {
+    public String toString() {
         return "Wind";
     }
 
@@ -34,7 +38,7 @@ class Percussion extends Instrument {
         System.out.println("Percussion.play() " + n);
     }
 
-    String what() {
+    public String toString() {
         return "Percussion";
     }
 
@@ -48,7 +52,7 @@ class Stringed extends Instrument {
         System.out.println("Stringed.play() " + n);
     }
 
-    String what() {
+    public String toString() {
         return "Stringed";
     }
 
@@ -72,7 +76,7 @@ class Woodwind extends Wind {
         System.out.println("Woodwind.play() " + n);
     }
 
-    String what() {
+    public String toString() {
         return "Woodwind";
     }
 }
@@ -86,6 +90,7 @@ public class Music3 {
     }
 
     public static void tuneAll(Instrument[] e) {
+
         for (Instrument i : e)
             tune(i);
     }
@@ -100,5 +105,8 @@ public class Music3 {
                 new Woodwind()
         };
         tuneAll(orchestra);
+        for (Instrument instrument : orchestra) {
+            System.out.println(instrument);
+        }
     }
 }
