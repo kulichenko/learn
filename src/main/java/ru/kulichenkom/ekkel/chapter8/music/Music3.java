@@ -1,3 +1,5 @@
+//Ch8Ex8 Измените программу Music3.java чтобы в ней случайным образом генерировались
+//объекты Instrument, как в программе Shapes.java
 //Ch8Ex7 Добавьте новый подтип Instrument в программу Music3.java.
 //Убедитесь в том, что полиморфизм работает правильно и для этого
 //нового типа (добавлен подтип Tambourine)
@@ -99,12 +101,13 @@ class Woodwind extends Wind {
 }
 
 public class Music3 {
+    private static RandInstrumentGenerator generator = new RandInstrumentGenerator();
+
     // Doesn’t care about type, so new types
 // added to the system still work right:
     public static void tune(Instrument i) {
 // ...
         i.play(Note.MIDDLE_C);
-        i.play(Note.B_FLAT);
     }
 
     public static void tuneAll(Instrument[] e) {
@@ -114,15 +117,10 @@ public class Music3 {
     }
 
     public static void main(String[] args) {
-// Upcasting during addition to the array:
-        Instrument[] orchestra = {
-                new Wind(),
-                new Percussion(),
-                new Tambourine(),
-                new Stringed(),
-                new Brass(),
-                new Woodwind()
-        };
+        Instrument[] orchestra = new Instrument[5];
+        for (int i = 0; i < orchestra.length; i++) {
+            orchestra[i] = generator.next();
+        }
         tuneAll(orchestra);
         for (Instrument instrument : orchestra) {
             System.out.println(instrument);

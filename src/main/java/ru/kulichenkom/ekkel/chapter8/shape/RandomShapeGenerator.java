@@ -8,7 +8,6 @@ public class RandomShapeGenerator {
 
     public Shape next() {
         switch (rand.nextInt(4)) {
-            default:
             case 0:
                 return new Circle();
             case 1:
@@ -17,6 +16,8 @@ public class RandomShapeGenerator {
                 return new Triangle();
             case 3:
                 return new Ellipse();
+            default:
+                return null;
         }
     }
 }
