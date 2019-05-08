@@ -29,11 +29,11 @@ class Human {
     }
 
     public void live() {
-        System.out.println(getName() + " " + getAge() + " лет");
+        System.out.println(name + " " + age + " лет");
         doing();
     }
 
     public void doing() {
-        System.out.println(getName() + " " + getSortOfActivity());
+        System.out.println(name + " " + sortOfActivity);
     }
 }

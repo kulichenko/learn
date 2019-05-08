@@ -110,7 +110,7 @@ public class Music3 {
         i.play(Note.MIDDLE_C);
     }
 
-    public static void tuneAll(Instrument[] e) {
+    public static void tuneAll(Instrument... e) {
 
         for (Instrument i : e)
             tune(i);

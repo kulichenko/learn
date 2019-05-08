@@ -18,14 +18,14 @@ public class Rodent {
     }
 
     public void sound() {
-        System.out.println(getName() + " фшух");
+        System.out.println(name + " фшух");
     }
 
     public void eat() {
-        System.out.println(getName() + " ест...");
+        System.out.println(name + " ест...");
     }
 
     public void gnow() {
-        System.out.println(getName() + " грызет...");
+        System.out.println(name + " грызет...");
     }
 }
