@@ -7,6 +7,10 @@ public class Bicycle extends Cycle {
     private String name = "bicycle";
     private int qtyWheels = 2;
 
+    public void balance() {
+        System.out.println("Bicycle is balanced...");
+    }
+
     public void toRide() {
         System.out.print("This is cycle with name " + this.name + " and its riding now ");
         wheels();

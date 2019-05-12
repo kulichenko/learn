@@ -7,6 +7,10 @@ public class Unicycle extends Cycle {
     private String name = "unicycle";
     private int qtyWheels = 1;
 
+    public void balance() {
+        System.out.println("Unicycle is balanced...");
+    }
+
     public void toRide() {
         System.out.print("This is cycle with name " + this.name + " and its riding now ");
         wheels();
