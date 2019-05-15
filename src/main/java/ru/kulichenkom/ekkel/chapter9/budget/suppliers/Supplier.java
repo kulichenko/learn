@@ -1,16 +1,13 @@
 //Ch9Ex5 Создайте интерфейс, содержащий три метода, в отдельном пакете.
 // Реализуйте этот интерфейс в другом пакете.
-package ru.kulichenkom.ekkel.chapter9.suppliers;
+package ru.kulichenkom.ekkel.chapter9.budget.suppliers;
 
 import ru.kulichenkom.ekkel.chapter9.budget.Budget;
 
 public class Supplier implements Budget {
     public static void main(String[] args) {
-        Supplier htm = new Supplier();
-        htm.purchasingRequest();
-        htm.order();
-        htm.goodsReceipt();
-        htm.payment();
+        Budget htm = new Supplier();
+        purchaseInformation(htm);
     }
 
     @Override
@@ -31,5 +28,12 @@ public class Supplier implements Budget {
     @Override
     public void payment() {
         System.out.println("Произведена оплата товара");
+    }
+
+    public static void purchaseInformation(Budget budget) {
+        budget.purchasingRequest();
+        budget.order();
+        budget.goodsReceipt();
+        budget.payment();
     }
 }

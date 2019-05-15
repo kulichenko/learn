@@ -42,6 +42,12 @@ interface FastFood {
     void iceCream();
 
     void cola();
+
+    default void showFastFoodInfo(FastFood fastFood) {
+        fastFood.cheeseburger();
+        fastFood.iceCream();
+        fastFood.cola();
+    }
 }
 
 class Meal {
@@ -90,21 +96,26 @@ public class Sandwich extends PortableLunch implements FastFood {
     }
 
     public static void main(String[] args) {
-        Sandwich sandwich = new Sandwich();
-        sandwich.cheeseburger();
-        sandwich.iceCream();
-        sandwich.cola();
+        FastFood sandwich = new Sandwich();
+        sandwich.showFastFoodInfo(sandwich);
     }
 
+    @Override
     public void cheeseburger() {
         System.out.println("Cheeseburger");
     }
 
+    @Override
     public void iceCream() {
         System.out.println("Ice cream");
     }
 
+    @Override
     public void cola() {
         System.out.println("Cola");
+    }
+
+    public Bread getB() {
+        return b;
     }
 }
