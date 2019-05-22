@@ -6,7 +6,7 @@
 //в аргументе. Создайте в main() объект этого класса и передайте его каждому
 //из методов.
 
-package ru.kulichenkom.ekkel.chapter9.rodent;
+package ru.kulichenkom.ekkel.chapter9;
 
 interface Engine {
     void startEngine();

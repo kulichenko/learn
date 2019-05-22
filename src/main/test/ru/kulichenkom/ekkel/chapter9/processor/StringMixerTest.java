@@ -2,11 +2,7 @@ package ru.kulichenkom.ekkel.chapter9.processor;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.stream.Stream;
 
 class StringMixerTest {
 
@@ -29,7 +25,7 @@ class StringMixerTest {
     @CsvSource({
             "Test, eTts",
             "214365, 123456",
-            "mixer Testa, imex reTts"
+            "mixer Testa, imex reTtsa"
     })
     void testProcess(String getNewString, String expectedResult) {
         StringMixer stringMixer = new StringMixer();
