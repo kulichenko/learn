@@ -29,7 +29,7 @@ class StringMixerTest {
     @CsvSource({
             "Test, eTts",
             "214365, 123456",
-            "mixer Test, imex reTts"
+            "mixer Testa, imex reTts"
     })
     void testProcess(String getNewString, String expectedResult) {
         StringMixer stringMixer = new StringMixer();
