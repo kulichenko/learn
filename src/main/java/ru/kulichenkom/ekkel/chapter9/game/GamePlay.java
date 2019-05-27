@@ -15,4 +15,12 @@ public class GamePlay {
         Game game = secondGameFactory.makeGame(TypeOfGame.valueOf(typeOfGame));
         game.tossUp();
     }
+
+    public static TypeOfGame convertStringToEnum(String inputString) {
+        try {
+            return TypeOfGame.valueOf(inputString);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Не смог найти enum");
+        }
+    }
 }

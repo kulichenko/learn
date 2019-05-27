@@ -13,6 +13,13 @@ public class GamePlayTwo {
         FactoryOfGames factory = new FactoryOfGames();
         Game game = factory.makeGame(TypeOfGame.valueOf(typeOfGame));
         game.tossUp();
+    }
 
+    public static TypeOfGame convertStringToEnum(String inputString) {
+        try {
+            return TypeOfGame.valueOf(inputString);
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Не смог найти enum");
+        }
     }
 }
