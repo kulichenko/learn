@@ -1,6 +1,4 @@
-package ru.kulichenkom.ekkel.chapter9.game;
-
-import ru.kulichenkom.ekkel.chapter9.game.interfaces.Game;
+package ru.kulichenkom.ekkel.chapter9.game.GameWithAbstractFactory;
 
 import java.util.Scanner;
 
