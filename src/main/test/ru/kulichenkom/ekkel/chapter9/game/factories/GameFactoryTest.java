@@ -21,25 +21,22 @@ class GameFactoryTest {
 
     static Stream<Arguments> testMakeGame() {
         return Stream.of(
-                Arguments.of("COIN", new CoinGame()),
-                Arguments.of("DICE", new DiceGame())
+                Arguments.of("COIN", CoinGame.class),
+                Arguments.of("DICE", DiceGame.class)
         );
     }
 
     @MethodSource
     @ParameterizedTest
-    void testMakeGame(TypeOfGame getTypeOfGame, Game expectedGame) {
+    void testMakeGame(TypeOfGame getTypeOfGame, Class<?> expectedGame) {
         Game resultGame = factory.createGame(getTypeOfGame);
-        Assertions.assertEquals(expectedGame.getClass(), resultGame.getClass());
+        Assertions.assertEquals(expectedGame, resultGame.getClass());
     }
 
     @Test
     public void exceptionTestMakeGame() {
-        assertThrows(IllegalArgumentException.class, () ->
-                factory.createGame(TypeOfGame.CHESS));
         Throwable thrown = assertThrows(IllegalArgumentException.class, () ->
                 factory.createGame(TypeOfGame.CHESS));
         assertEquals("Некорретный тип игры: CHESS", thrown.getMessage());
     }
 }
-
