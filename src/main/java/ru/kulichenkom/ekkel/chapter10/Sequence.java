@@ -1,3 +1,6 @@
+//Ch10Ex4 Добавьте в класс Sequence.SequenceSelector метод для получения
+//ссылки на внешний класс Sequence.
+//
 //Ch10Ex2 Создайте класс, который содержит String и метод toString() для вывода хранимой строки.
 //Добавьте несколько экземпляров нового класса в объект Sequence (класс сиквенс, интерфейс
 //селектор приведены как пример в книге) и выведите их.
@@ -40,19 +43,11 @@ public class Sequence {
             System.out.print(selector.current() + " ");
             selector.next();
         }
-        Word wordFirst = new Word("Мир!");
-        Word wordSecond = new Word("Труд!");
-        Word wordThird = new Word("Май!");
-        Sequence message = new Sequence(3);
-        message.add(wordFirst);
-        message.add(wordSecond);
-        message.add(wordThird);
-        Selector sel = message.selector();
-        while (!sel.end()) {
-            System.out.print(sel.current() + " ");
-            sel.next();
-        }
+        ((SequenceSelector) selector).getSequence().testSeaqunce();
+    }
 
+    public void testSeaqunce() {
+        System.out.println("Это метод testSequence() класса Sequence");
     }
 
     public void add(Object x) {
@@ -77,6 +72,10 @@ public class Sequence {
 
         public void next() {
             if (i < items.length) i++;
+        }
+
+        public Sequence getSequence() {
+            return Sequence.this; //получение ссылки на объект внешнего класса
         }
     }
 }
