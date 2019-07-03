@@ -4,6 +4,7 @@
 package ru.kulichenkom.ekkel.chapter11;
 
 import java.util.ArrayList;
+import java.util.List;
 
 interface Selector {
     boolean end();
@@ -14,7 +15,7 @@ interface Selector {
 }
 
 public class Sequence {
-    private ArrayList<Object> items;
+    private List<Object> items;
     private int next = 0;
 
     public Sequence() {

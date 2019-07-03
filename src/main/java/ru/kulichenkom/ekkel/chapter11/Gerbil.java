@@ -5,7 +5,8 @@
 //элементов и вызова hop() для каждого объекта Gerbil.
 package ru.kulichenkom.ekkel.chapter11;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Gerbil {
     private int gerbilNumber;
@@ -19,7 +20,7 @@ public class Gerbil {
     }
 
     public static void main(String[] args) {
-        ArrayList<Gerbil> gerbils = new ArrayList<>();
+        List<Gerbil> gerbils = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             gerbils.add(new Gerbil(i));
         }
