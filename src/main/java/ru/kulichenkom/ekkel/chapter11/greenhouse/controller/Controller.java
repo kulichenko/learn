@@ -1,3 +1,8 @@
+//Ch11Ex13 В примере GreenhouseController.java класс Controller использует ArrayList.
+//Измените код так, чтобы в нем использовался класс LinkedList, и организуйте перебор множества
+//событий с использованием Iterator.
+// классы примера: GreenhouseController.java,GreenhouseControls.java,
+// controller/Controller.java,controller/Event.java
 package ru.kulichenkom.ekkel.chapter11.greenhouse.controller;
 
 //: innerclasses/controller/Controller.java
@@ -7,21 +12,17 @@ import java.util.*;
 
 public class Controller {
     // A class from java.util to hold Event objects:
-    private List<Event> eventList = new ArrayList<>();
+    private List<Event> eventList = new LinkedList<>();
 
-    public void addEvent(Event c) {
-        eventList.add(c);
+    public void addEvent(Event event) {
+        eventList.add(event);
     }
 
     public void run() {
-        while (eventList.size() > 0)
-            // Make a copy so you're not modifying the list
-            // while you're selecting the elements in it:
-            for (Event e : new ArrayList<>(eventList))
-                if (e.ready()) {
-                    System.out.println(e);
-                    e.action();
-                    eventList.remove(e);
-                }
+        Iterator<Event> controllerIterator = eventList.iterator();
+        while (controllerIterator.hasNext()) {
+            System.out.println(controllerIterator.next());
+            eventList.remove(eventList);
+        }
     }
 }
