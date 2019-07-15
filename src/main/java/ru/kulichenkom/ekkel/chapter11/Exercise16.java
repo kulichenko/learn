@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Exercise16 {
-    public static void vowelCounter(Set<String> setString) {
+    public static String vowelCounter(Set<String> setString) {
         Set<Character> vowelLetters = new HashSet<>();
         Collections.addAll(vowelLetters, 'A', 'E', 'I', 'O', 'U', 'Y', 'a', 'e', 'i', 'o', 'u', 'y');
         Set<String> numbers = new HashSet<>();
@@ -29,7 +29,7 @@ public class Exercise16 {
             System.out.print(s + ": " + count + ", ");
         }
         System.out.println();
-        System.out.print("Total vowels: " + totalVowels);
+        return "Total vowels: " + totalVowels;
     }
 
     public static void main(String[] args) {
@@ -37,6 +37,6 @@ public class Exercise16 {
         Set<String> words = new TreeSet<>(new TextFile("src/main/java" +
                 "/ru/kulichenkom/ekkel/chapter11/Gerbil.java", "\\W+"));
         System.out.println(words);
-        vowelCounter(words);
+        System.out.println(vowelCounter(words));
     }
 }
