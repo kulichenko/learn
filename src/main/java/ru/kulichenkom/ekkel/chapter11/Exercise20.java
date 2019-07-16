@@ -17,10 +17,10 @@ public class Exercise20 {
         setString.removeAll(numbers);
         Map<Character, Integer> eachVowelCounter = new TreeMap<>();
         Iterator<Character> iterator = vowelLetters.iterator();
-        Iterator<String> wordsIterator = setString.iterator();
         while (iterator.hasNext()) {
             int countVowels = 0;
             Character ch = iterator.next();
+            Iterator<String> wordsIterator = setString.iterator();
             while (wordsIterator.hasNext()) {
                 String words = wordsIterator.next();
                 for (Character cha : words.toCharArray()) {
