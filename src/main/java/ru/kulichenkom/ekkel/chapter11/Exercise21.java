@@ -25,15 +25,12 @@ public class Exercise21 {
         Set<String> numbers = new HashSet<>();
         Collections.addAll(numbers, "0 1 2 3 4 5 6 7 8 9".split(" "));
         allWordsFromFile.removeAll(numbers);
+        Collections.sort(allWordsFromFile, String.CASE_INSENSITIVE_ORDER);
         uniqueWordsFromFile.removeAll(numbers);
         Map<String, Integer> wordCounter = new TreeMap<>();
-        Iterator<String> iterator = uniqueWordsFromFile.iterator();
-        while (iterator.hasNext()) {
+        for (String word : uniqueWordsFromFile) {
             int countWordInputs = 0;
-            String word = iterator.next();
-            Iterator<String> wordsIterator = allWordsFromFile.iterator();
-            while (wordsIterator.hasNext()) {
-                String words = wordsIterator.next();
+            for (String words : allWordsFromFile) {
                 if (words.equals(word)) {
                     countWordInputs++;
                 }
@@ -46,9 +43,9 @@ public class Exercise21 {
     public static void main(String[] args) {
 
         List<String> words = new ArrayList<>(new TextFile("src/main/java" +
-                "/ru/kulichenkom/ekkel/chapter11/SimpleCollection.java", "\\W+"));
+                "/ru/kulichenkom/ekkel/chapter11/Exercise17.java", "\\W+"));
         Set<String> wordsSet = new TreeSet<>(new TextFile("src/main/java" +
-                "/ru/kulichenkom/ekkel/chapter11/SimpleCollection.java", "\\W+"));
-        System.out.println(wordsCounter(words, wordsSet));
+                "/ru/kulichenkom/ekkel/chapter11/Exercise17.java", "\\W+"));
+        System.out.print(wordsCounter(words, wordsSet));
     }
 }
