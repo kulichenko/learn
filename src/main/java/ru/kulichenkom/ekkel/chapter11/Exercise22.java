@@ -23,13 +23,11 @@ class Word {
 
 public class Exercise22 {
     public static void main(String[] args) {
-        List<String> words = new ArrayList<>(new TextFile("src/main/java" +
-                "/ru/kulichenkom/ekkel/chapter11/Exercise17.java", "\\W+"));
+        List<String> words = new ArrayList<>(new TextFile("src/main/resources/TextForExercises.txt", "\\W+"));
         Collections.sort(words, String.CASE_INSENSITIVE_ORDER);
         System.out.println("Words to count, sorted: " + words);
         Set<Word> wordObjects = new HashSet<>();
-        Set<String> wordSet = new TreeSet<>(new TextFile("src/main/java" +
-                "/ru/kulichenkom/ekkel/chapter11/Exercise17.java", "\\W+"));
+        Set<String> wordSet = new TreeSet<>(new TextFile("src/main/resources/TextForExercises.txt", "\\W+"));
         for (String word : wordSet) {
             int count = 0;
             for (int i = 0; i < words.size(); i++) {

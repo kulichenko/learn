@@ -22,8 +22,7 @@ import java.util.*;
 
 public class Exercise21 {
     public static String wordsCounter(List<String> allWordsFromFile, Set<String> uniqueWordsFromFile) {
-        Set<String> numbers = new HashSet<>();
-        Collections.addAll(numbers, "0 1 2 3 4 5 6 7 8 9".split(" "));
+        Set<String> numbers = new HashSet<>(Arrays.asList("0", "1", "2", "3", "4", "5", "6", "7", "8", "9"));
         allWordsFromFile.removeAll(numbers);
         Collections.sort(allWordsFromFile, String.CASE_INSENSITIVE_ORDER);
         uniqueWordsFromFile.removeAll(numbers);
@@ -41,11 +40,8 @@ public class Exercise21 {
     }
 
     public static void main(String[] args) {
-
-        List<String> words = new ArrayList<>(new TextFile("src/main/java" +
-                "/ru/kulichenkom/ekkel/chapter11/Exercise17.java", "\\W+"));
-        Set<String> wordsSet = new TreeSet<>(new TextFile("src/main/java" +
-                "/ru/kulichenkom/ekkel/chapter11/Exercise17.java", "\\W+"));
+        List<String> words = new ArrayList<>(new TextFile("src/main/resources/TextForExercises.txt", "\\W+"));
+        Set<String> wordsSet = new TreeSet<>(new TextFile("src/main/resources/TextForExercises.txt", "\\W+"));
         System.out.print(wordsCounter(words, wordsSet));
     }
 }
