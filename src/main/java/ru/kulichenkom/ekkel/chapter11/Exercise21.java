@@ -38,7 +38,7 @@ public class Exercise21 {
             }
             wordCounter.put(word, countWordInputs);
         }
-        return "" + wordCounter;
+        return String.valueOf(wordCounter);
     }
 
     public static void main(String[] args) throws IOException {
