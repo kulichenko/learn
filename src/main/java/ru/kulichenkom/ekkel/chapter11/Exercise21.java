@@ -16,8 +16,10 @@
 
 package ru.kulichenkom.ekkel.chapter11;
 
-import ru.kulichenkom.utils.TextFile;
-
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class Exercise21 {
@@ -39,9 +41,14 @@ public class Exercise21 {
         return "" + wordCounter;
     }
 
-    public static void main(String[] args) {
-        List<String> words = new ArrayList<>(new TextFile("src/main/resources/TextForExercises.txt", "\\W+"));
-        Set<String> wordsSet = new TreeSet<>(new TextFile("src/main/resources/TextForExercises.txt", "\\W+"));
+    public static void main(String[] args) throws IOException {
+        Path path = Paths.get("src/main/resources/TextForExercises.txt");
+        String text = String.valueOf(Files.readAllLines(path));
+        List<String> words = new ArrayList<>(Arrays.asList(text.split("\\W+")));
+        Set<String> wordsSet = new TreeSet<>();
+        for (String s : words) {
+            wordsSet.add(s);
+        }
         System.out.print(wordsCounter(words, wordsSet));
     }
 }

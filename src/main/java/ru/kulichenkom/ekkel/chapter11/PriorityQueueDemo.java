@@ -45,8 +45,9 @@ W U U U T T S S S O O O O N N L I I H H F E E E D D C C C B A A
 
 class QueueDemo {
     public static void printQ(Queue queue) {
-        while (queue.peek() != null)
+        while (queue.peek() != null) {
             System.out.print(queue.remove() + " ");
+        }
         System.out.println();
     }
 

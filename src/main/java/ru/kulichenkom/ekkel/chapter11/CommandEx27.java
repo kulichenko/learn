@@ -15,7 +15,7 @@ class Command {
     }
 
     public void operation() {
-        System.out.print(name);
+        System.out.println(name);
     }
 }
 
@@ -24,7 +24,7 @@ class FillQueue {
     public Queue<Command> fillingQueue() {
         Queue<Command> commands = new LinkedList<>();
         for (int i = 0; i < 5; i++) {
-            commands.offer(new Command(i + " "));
+            commands.offer(new Command(String.valueOf(i)));
         }
         return commands;
     }

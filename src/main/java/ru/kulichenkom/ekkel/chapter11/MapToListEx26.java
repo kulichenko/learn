@@ -7,28 +7,25 @@ import java.util.*;
 
 public class MapToListEx26 {
     public static void main(String[] args) {
-        List<String> words = new ArrayList<>(new TextFile("src/main/java" +
-                "/ru/kulichenkom/ekkel/chapter11/Text.txt", "\\W+"));
-        Map<String, ArrayList<Integer>> countedWords = new LinkedHashMap<>();
+        List<String> words = new ArrayList<>(new TextFile("src/main/resources/TextForExercises.txt", "\\W+"));
+        Map<String, List<Integer>> countedWords = new LinkedHashMap<>();
         int count = 0;
         for (String word : words) {
             count++;
             if (countedWords.keySet().contains(word)) {
-                countedWords.get(word).add(count);
-                countedWords.put(word, countedWords.get(word));
+                countedWords.get(word).add(count);//Изменяет ArrayList (который является значением), добавляя к нему очередной count (порядковый номер, где встретилось слово)
+                countedWords.put(word, countedWords.get(word));//Изменяет Map, добавляя туда слово (key) и ArrayList (value)
             } else {
-                ArrayList<Integer> tempList = new ArrayList<>();
-                tempList.add(0, count);
+                List<Integer> tempList = new ArrayList<>();
+                tempList.add(count);
                 countedWords.put(word, tempList);
             }
         }
         System.out.println(countedWords);
         Map<Integer, String> sortByOriginalPosition = new TreeMap<>();
-        Iterator<Map.Entry<String, ArrayList<Integer>>> iterator = countedWords.entrySet().iterator();
-        while (iterator.hasNext()) {
-            Map.Entry<String, ArrayList<Integer>> mapEntry = iterator.next();
-            for (int i = 0; i < mapEntry.getValue().size(); i++) {
-                sortByOriginalPosition.put(mapEntry.getValue().get(i), mapEntry.getKey());
+        for (Map.Entry<String, List<Integer>> entry : countedWords.entrySet()) {
+            for (int i = 0; i < entry.getValue().size(); i++) {
+                sortByOriginalPosition.put(entry.getValue().get(i), entry.getKey());
             }
         }
         System.out.println(sortByOriginalPosition.values());
