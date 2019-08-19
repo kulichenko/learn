@@ -3,8 +3,6 @@
 //ArrayIndexOutOfBoundsException.
 package ru.kulichenkom.ekkel.chapter12;
 
-import javax.swing.*;
-
 public class RegionsEx3 {
     static int[] numberOfRegions = new int[89];
 
