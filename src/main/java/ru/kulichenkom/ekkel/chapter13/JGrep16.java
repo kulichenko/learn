@@ -22,9 +22,9 @@ public class JGrep16 {
         if (matcher.find()) {
             File[] files = new File(args[0]).listFiles();
             for (int i = 0; i < files.length; i++) {
-                Matcher checkFiles = Pattern.compile(args[1]).matcher(String.valueOf(files[i]));
+                Matcher checkFiles = Pattern.compile(args[1]).matcher(files[i].getName());
                 if (checkFiles.find()) {
-                    System.out.println(i + ": " + files[i]);
+                    System.out.println(i + ": " + files[i].getName());
                 }
             }
         } else {
