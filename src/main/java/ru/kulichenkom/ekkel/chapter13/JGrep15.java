@@ -1,6 +1,6 @@
 //Ch13Ex15 Измените пример JGrep.java, так, чтобы в его аргументах могли передаваться флаги
 //(например Pattern.CASE_INSENSITIVE, Pattern.MULTILINE)
-// {Args: src/main/resources/TextForExercises.txt "\b[sct]\w+"}
+// {Args: src/main/resources/TextForExercises.txt "\b[sct]\w+" Pattern.CASE_INSENSITIVE}
 package ru.kulichenkom.ekkel.chapter13;
 
 import java.nio.file.Files;
@@ -56,9 +56,10 @@ public class JGrep15 {
         List<String> lines = Files.readAllLines(path);
         for (String line : lines) {
             m.reset(line);
-            while (m.find())
+            while (m.find()) {
                 System.out.println(index++ + ": " +
                         m.group() + ": " + m.start());
+            }
         }
     }
 }
