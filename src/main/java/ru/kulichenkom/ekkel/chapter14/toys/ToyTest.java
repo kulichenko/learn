@@ -1,7 +1,9 @@
 //: typeinfo/toys/ToyTest.java
 // Testing class Class.
 //Пример из книги стр 456, на базе которого необходимо выполнять упражнения.
-
+//-----------------------------------------------------------------------------------
+//Ch14Ex2 - Встройте новый интерфейс в ToyTest.java. Убедитесь, что он обнаруживается,
+//А информация о нем выводится программой.
 package ru.kulichenkom.ekkel.chapter14.toys;
 
 interface HasBatteries {
@@ -11,6 +13,9 @@ interface Waterproof {
 }
 
 interface Shoots {
+}
+
+interface Plush {
 }
 
 class Toy {
@@ -24,7 +29,7 @@ class Toy {
 }
 
 class FancyToy extends Toy
-        implements HasBatteries, Waterproof, Shoots {
+        implements HasBatteries, Waterproof, Shoots, Plush {
     FancyToy() {
         super(1);
     }
@@ -64,19 +69,24 @@ public class ToyTest {
         printInfo(obj.getClass());
     }
 } /* Output:
-Class name: typeinfo.toys.FancyToy is interface? [false]
+Class name: ru.kulichenkom.ekkel.chapter14.toys.FancyToy is interface? [false]
 Simple name: FancyToy
-Canonical name : typeinfo.toys.FancyToy
-Class name: typeinfo.toys.HasBatteries is interface? [true]
+Canonical name : ru.kulichenkom.ekkel.chapter14.toys.FancyToy
+Class name: ru.kulichenkom.ekkel.chapter14.toys.HasBatteries is interface? [true]
 Simple name: HasBatteries
-Canonical name : typeinfo.toys.HasBatteries
-Class name: typeinfo.toys.Waterproof is interface? [true]
+Canonical name : ru.kulichenkom.ekkel.chapter14.toys.HasBatteries
+Class name: ru.kulichenkom.ekkel.chapter14.toys.Waterproof is interface? [true]
 Simple name: Waterproof
-Canonical name : typeinfo.toys.Waterproof
-Class name: typeinfo.toys.Shoots is interface? [true]
+Canonical name : ru.kulichenkom.ekkel.chapter14.toys.Waterproof
+Class name: ru.kulichenkom.ekkel.chapter14.toys.Shoots is interface? [true]
 Simple name: Shoots
-Canonical name : typeinfo.toys.Shoots
-Class name: typeinfo.toys.Toy is interface? [false]
+Canonical name : ru.kulichenkom.ekkel.chapter14.toys.Shoots
+Class name: ru.kulichenkom.ekkel.chapter14.toys.Plush is interface? [true]
+Simple name: Plush
+Canonical name : ru.kulichenkom.ekkel.chapter14.toys.Plush
+Class name: ru.kulichenkom.ekkel.chapter14.toys.Toy is interface? [false]
 Simple name: Toy
-Canonical name : typeinfo.toys.Toy
+Canonical name : ru.kulichenkom.ekkel.chapter14.toys.Toy
+
+Process finished with exit code 0
 *///:~
