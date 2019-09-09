@@ -1,7 +1,9 @@
 //CH14EX3 Добавьте класс Rhomboid в иерархию Shapes3. Создайте объект Rhomboid, выполните восходящее
 // преобразование его в Shape, а затем снова верните его к классу Rhomboid нисходящим преобразованием.
 //Попробуйте выполнить нисходящее преобразование к Circle и объясните, что при этом происходит.
-
+///------------------
+//CH14EX4 Измените предыдущий пример так, чтобы перед нисходящим преобразованием
+//в нем использовался оператор instanceof для проверки типа
 package ru.kulichenkom.ekkel.chapter14.shapes;
 
 //: typeinfo/Shapes.java
@@ -47,8 +49,15 @@ public class Shapes3 {
         for (Shape shape : shapeList) {
             shape.draw();
         }
-        Shape shape1 = new Rhomboid();
-        Rhomboid rhomboid3 = (Rhomboid) shape1;
-        rhomboid3.draw();
+        Rhomboid rhomboid = new Rhomboid();
+
+        Shape shape1 = rhomboid;
+        shape1.draw();
+
+        if (shape1 instanceof Circle) {
+            shape1.draw();
+        } else if (!(shape1 instanceof Circle)) {
+            System.out.println("(Shape)rhomboid это не Circle");
+        }
     }
 }
