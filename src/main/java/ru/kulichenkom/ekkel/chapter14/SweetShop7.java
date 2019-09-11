@@ -3,7 +3,7 @@
 // if your command line is "Java Sweetshop Candy," then only the
 // Candy object is created. Notice how you can control which
 // Class objects are loaded via the commandline argument.
-//Args: {Gum Cookie Candy}
+//Args: {Gum Candy Cookie}
 package ru.kulichenkom.ekkel.chapter14;
 
 class Candy {
