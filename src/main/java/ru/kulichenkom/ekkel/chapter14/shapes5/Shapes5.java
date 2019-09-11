@@ -1,4 +1,5 @@
-//Ch14Ex5
+//Ch14Ex5 Реализуйте в Shapes.java метод rotate(Shape), который проверяет, не относится
+//ли фигура к классу Circle (и если относится, не выполняет ли операцию).
 package ru.kulichenkom.ekkel.chapter14.shapes5;
 
 import java.util.Arrays;
