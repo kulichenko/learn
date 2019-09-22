@@ -1,0 +1,12 @@
+//: typeinfo/pets/Cat.java
+package ru.kulichenkom.ekkel.chapter14.pets;
+
+public class Cat extends Pet {
+    public Cat(String name) {
+        super(name);
+    }
+
+    public Cat() {
+        super();
+    }
+} ///:~
