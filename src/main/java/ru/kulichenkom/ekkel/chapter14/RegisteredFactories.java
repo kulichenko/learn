@@ -1,32 +1,34 @@
+//Ch14Ex14 Конструктор является разновидностью фабричного метода. Измените пример
+//RegisteredFactories.java так, чтобы вместо использования явно заданной фабрики
+//объект класса сохранялся в LIst а для его создания использовался метод newInstance().
+//
 //Пример из книги стр477 RegisteredFactories.java для выполнения упражнения 14.
 package ru.kulichenkom.ekkel.chapter14;
 
-import ru.kulichenkom.ekkel.chapter14.factory.Factory;
-
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 class Part {
-    static List<Factory<? extends Part>> partFactories =
-            new ArrayList<Factory<? extends Part>>();
+    static List<Class<? extends Part>> partFactories = new ArrayList<>();
     private static Random rand = new Random(47);
 
     static {
         // Collections.addAll() gives an "unchecked generic
         // array creation ... for varargs parameter" warning.
-        partFactories.add(new FuelFilter.Factory());
-        partFactories.add(new AirFilter.Factory());
-        partFactories.add(new CabinAirFilter.Factory());
-        partFactories.add(new OilFilter.Factory());
-        partFactories.add(new FanBelt.Factory());
-        partFactories.add(new PowerSteeringBelt.Factory());
-        partFactories.add(new GeneratorBelt.Factory());
+        partFactories.add(FuelFilter.class);
+        partFactories.add(AirFilter.class);
+        partFactories.add(CabinAirFilter.class);
+        partFactories.add(OilFilter.class);
+        partFactories.add(FanBelt.class);
+        partFactories.add(PowerSteeringBelt.class);
+        partFactories.add(GeneratorBelt.class);
     }
 
-    public static Part createRandom() {
+    public static Part createRandom() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
         int n = rand.nextInt(partFactories.size());
-        return partFactories.get(n).create();
+        return partFactories.get(n).getDeclaredConstructor().newInstance();
     }
 
     public String toString() {
@@ -104,7 +106,7 @@ class PowerSteeringBelt extends Belt {
 }
 
 public class RegisteredFactories {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         for (int i = 0; i < 10; i++)
             System.out.println(Part.createRandom());
     }
