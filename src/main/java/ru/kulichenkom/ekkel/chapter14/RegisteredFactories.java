@@ -1,7 +1,9 @@
+//Ch14Ex24 Добавьте null-объекты в RegisteredFactories.java
+//-------------------------------------------------------------------------------
 //Ch14Ex14 Конструктор является разновидностью фабричного метода. Измените пример
 //RegisteredFactories.java так, чтобы вместо использования явно заданной фабрики
 //объект класса сохранялся в LIst а для его создания использовался метод newInstance().
-//
+//-------------------------------------------------------------------------------
 //Пример из книги стр477 RegisteredFactories.java для выполнения упражнения 14.
 package ru.kulichenkom.ekkel.chapter14;
 
@@ -9,6 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 
 class Part {
     static List<Class<? extends Part>> partFactories = new ArrayList<>();
@@ -24,6 +27,7 @@ class Part {
         partFactories.add(FanBelt.class);
         partFactories.add(PowerSteeringBelt.class);
         partFactories.add(GeneratorBelt.class);
+        partFactories.add(NullPart.class);
     }
 
     public static Part createRandom() throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
@@ -33,6 +37,21 @@ class Part {
 
     public String toString() {
         return getClass().getSimpleName();
+    }
+}
+
+class NullPart extends Part {
+
+    public static final Part NULL = new NullPart();
+
+    public String toString() {
+        return "NULL";
+    }
+
+    public static class Factory implements ru.kulichenkom.ekkel.chapter14.factory.Factory<NullPart> {
+        public NullPart create() {
+            return (NullPart) NULL;
+        }
     }
 }
 
@@ -107,7 +126,8 @@ class PowerSteeringBelt extends Belt {
 
 public class RegisteredFactories {
     public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 100; i++) {
             System.out.println(Part.createRandom());
+        }
     }
 }
