@@ -12,8 +12,9 @@ public class LinkedStack<T> {
 
     public static void main(String[] args) {
         LinkedStack<String> lss = new LinkedStack<>();
-        for (String s : "Phasers on stun!".split(" "))
+        for (String s : "Phasers on stun!".split(" ")) {
             lss.push(s);
+        }
         String s;
         while ((s = lss.pop()) != null) {
             System.out.println(s);
