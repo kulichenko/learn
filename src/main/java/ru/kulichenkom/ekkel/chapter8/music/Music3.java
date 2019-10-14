@@ -10,36 +10,8 @@
 //Пакет .music - пример из книги, по нему будут несколько следующих заданий
 package ru.kulichenkom.ekkel.chapter8.music;
 
-class Instrument {
-    void play(Note n) {
-        System.out.println("Instrument.play() " + n);
-    }
-
-    public String toString() {
-        return "Instrument";
-    }
-
-    void adjust() {
-        System.out.println("Adjusting Instrument");
-    }
-}
-
-class Wind extends Instrument {
-    void play(Note n) {
-        System.out.println("Wind.play() " + n);
-    }
-
-    public String toString() {
-        return "Wind";
-    }
-
-    void adjust() {
-        System.out.println("Adjusting Wind");
-    }
-}
-
 class Percussion extends Instrument {
-    void play(Note n) {
+    public void play(Note n) {
         System.out.println("Percussion.play() " + n);
     }
 
@@ -47,13 +19,13 @@ class Percussion extends Instrument {
         return "Percussion";
     }
 
-    void adjust() {
+    public void adjust() {
         System.out.println("Adjusting Percussion");
     }
 }
 
 class Tambourine extends Percussion {
-    void play(Note n) {
+    public void play(Note n) {
         System.out.println("Tambourine.play() " + n);
     }
 
@@ -61,13 +33,13 @@ class Tambourine extends Percussion {
         return "Tambourine";
     }
 
-    void adjust() {
+    public void adjust() {
         System.out.println("Adjusting Tambourine");
     }
 }
 
 class Stringed extends Instrument {
-    void play(Note n) {
+    public void play(Note n) {
         System.out.println("Stringed.play() " + n);
     }
 
@@ -75,28 +47,40 @@ class Stringed extends Instrument {
         return "Stringed";
     }
 
-    void adjust() {
+    public void adjust() {
         System.out.println("Adjusting Stringed");
     }
 }
 
 class Brass extends Wind {
-    void play(Note n) {
+    public void play(Note n) {
         System.out.println("Brass.play() " + n);
     }
 
-    void adjust() {
+    public void adjust() {
         System.out.println("Adjusting Brass");
+    }
+
+    public String toString() {
+        return "Brass";
+    }
+
+    public void clearSpitValve() {
+        System.out.println("Brass clearing spit valve");
     }
 }
 
 class Woodwind extends Wind {
-    void play(Note n) {
+    public void play(Note n) {
         System.out.println("Woodwind.play() " + n);
     }
 
     public String toString() {
         return "Woodwind";
+    }
+
+    public void clearSpitValve() {
+        System.out.println("Woodwind clearing spit valve");
     }
 }
 
