@@ -40,8 +40,6 @@ public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
         }
     }
 
-    ;
-
     public Iterator<Coffee> iterator() {
         return new CoffeeIterator();
     }
