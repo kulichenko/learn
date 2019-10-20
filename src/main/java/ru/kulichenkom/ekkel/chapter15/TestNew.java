@@ -23,7 +23,6 @@ public class TestNew {
         System.out.println(dogList);
         System.out.println(taksaSet);
         System.out.println(cats);
-
     }
 }
 
