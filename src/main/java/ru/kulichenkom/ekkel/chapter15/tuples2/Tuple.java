@@ -1,9 +1,6 @@
 package ru.kulichenkom.ekkel.chapter15.tuples2;
 
-import ru.kulichenkom.ekkel.chapter15.tuples.FiveTuple;
-import ru.kulichenkom.ekkel.chapter15.tuples.FourTuple;
-import ru.kulichenkom.ekkel.chapter15.tuples.ThreeTuple;
-import ru.kulichenkom.ekkel.chapter15.tuples.TwoTuple;
+import ru.kulichenkom.ekkel.chapter15.tuples.*;
 
 public class Tuple {
     public static <A, B> TwoTuple<A, B> tuple(A a, B b) {
@@ -20,5 +17,9 @@ public class Tuple {
 
     public static <A, B, C, D, E> FiveTuple<A, B, C, D, E> tuple(A a, B b, C c, D d, E e) {
         return new FiveTuple(a, b, c, d, e);
+    }
+
+    public static <A, B, C, D, E, F> SixTuple<A, B, C, D, E, F> tuple(A a, B b, C c, D d, E e, F f) {
+        return new SixTuple(a, b, c, d, e, f);
     }
 }
