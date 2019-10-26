@@ -59,24 +59,40 @@ public class ContainerMethodDifferences {
 }
 
 //: net/mindview/util/Sets.java
-
+//Ch15Ex17 Изменить код Sets.java таким образом, чтобы он обрабатывал как общий случай интерфейса Set, так и особый случай
+//EnumSet, используя clone() вместо создания нового объекта HashSet.
 class Sets {
     public static <T> Set<T> union(Set<T> a, Set<T> b) {
+
+        if (a instanceof EnumSet) {
+            Set<T> result = ((EnumSet) a).clone();
+            result.addAll(b);
+            return result;
+        }
         Set<T> result = new HashSet<>(a);
         result.addAll(b);
         return result;
     }
 
-    public static <T>
-    Set<T> intersection(Set<T> a, Set<T> b) {
+    public static <T> Set<T> intersection(Set<T> a, Set<T> b) {
+        if (a instanceof EnumSet) {
+            Set<T> result = ((EnumSet) a).clone();
+            result.retainAll(b);
+            return result;
+        }
+
         Set<T> result = new HashSet<>(a);
         result.retainAll(b);
         return result;
     }
 
     // Subtract subset from superset:
-    public static <T> Set<T>
-    difference(Set<T> superset, Set<T> subset) {
+    public static <T> Set<T> difference(Set<T> superset, Set<T> subset) {
+        if (superset instanceof EnumSet) {
+            Set<T> result = ((EnumSet) superset).clone();
+            result.removeAll(subset);
+
+        }
         Set<T> result = new HashSet<>(superset);
         result.removeAll(subset);
         return result;
