@@ -5,32 +5,32 @@ package ru.kulichenkom.ekkel.chapter15;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
-class Building {
+class Buildings {
 }
 
-class House extends Building {
+class Houses extends Buildings {
     private String location;
     private Integer area;
 
-    public House() {
+    public Houses() {
         location = null;
     }
 
-    public House(Integer area) {
+    public Houses(Integer area) {
         this.area = area;
     }
 
-    public House(String location) {
+    public Houses(String location) {
         this.location = location;
     }
 
-    public House(String location, Integer area) {
+    public Houses(String location, Integer area) {
         this.location = location;
         this.area = area;
     }
 
     public String toString() {
-        return "House" + ((location == null) ? "" : " in " + location) +
+        return "Houses" + ((location == null) ? "" : " in " + location) +
                 ((area != null) ? (", " + area + " sq meters") : "");
     }
 }
@@ -43,18 +43,18 @@ public class ClassTypeCreatorEx22<T> {
     }
 
     public static void main(String[] args) {
-        ClassTypeCreatorEx22<Building> creatorBuilding = new ClassTypeCreatorEx22(Building.class);
-        ClassTypeCreatorEx22<House> creatorHouse = new ClassTypeCreatorEx22(House.class);
+        ClassTypeCreatorEx22<Buildings> creatorBuildings = new ClassTypeCreatorEx22(Buildings.class);
+        ClassTypeCreatorEx22<Houses> creatorHouses = new ClassTypeCreatorEx22(Houses.class);
         try {
-            Building building = (Building) creatorBuilding.createObject("ru.kulichenkom.ekkel.chapter15.Building");
-            System.out.println("House constructors: ");
-            Constructor[] constructors = House.class.getConstructors();
+            Buildings building = (Buildings) creatorBuildings.createObject("ru.kulichenkom.ekkel.chapter15.Buildings");
+            System.out.println("Houses constructors: ");
+            Constructor[] constructors = Houses.class.getConstructors();
             for (Constructor constructor : constructors) {
                 System.out.println(constructor);
             }
-            House house = (House) creatorHouse.createObject("ru.kulichenkom.ekkel.chapter15.House", "Spb");
-            House house1 = (House) creatorHouse.createObject("ru.kulichenkom.ekkel.chapter15.House", 1500);
-            House house2 = (House) creatorHouse.createObject("ru.kulichenkom.ekkel.chapter15.House", "Russia", 1500);
+            Houses house = (Houses) creatorHouses.createObject("ru.kulichenkom.ekkel.chapter15.Houses", "Spb");
+            Houses house1 = (Houses) creatorHouses.createObject("ru.kulichenkom.ekkel.chapter15.Houses", 1500);
+            Houses house2 = (Houses) creatorHouses.createObject("ru.kulichenkom.ekkel.chapter15.Houses", "Russia", 1500);
             System.out.println(house);
             System.out.println(house1);
             System.out.println(house2);
