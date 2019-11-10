@@ -16,6 +16,10 @@ public class Exercise28 {
         ex28.contraGetT(ex28.new Generic2<Pet>());
     }
 
+    //метод contraSet() имеет ограничение супертипа. Это позволяет безопасно передать типизованный
+    //объект обобщенному типу %)
+    // В методе contraSet() аргумент имеет тип Generic1<? super T>, так что Generic1 содержит
+    //конкретный тип, производный от Т
     public <T> void contraSetT(Generic1<? super T> generic1, T t) {
         generic1.setT(t);
     }
