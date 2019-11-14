@@ -45,6 +45,4 @@ public class GenericCast {
             System.out.print(s + " ");
         }
     }
-} /* Output:
-J I H G F E D C B A
-*///:~
+}
