@@ -5,6 +5,7 @@ interface Payable<T> {
 
 class Employee implements Payable<Employee> {
 }
+
 //class Hourly extends Employee implements Payable<Hourly>{}
 //Класс Hourly не компилируется, потому что стирание Payable<Employee> и Payable<Hourly>{}
 //до одного класса Payable, а приведенный выше код будет означать, что один интерфейс реализуется дважды
