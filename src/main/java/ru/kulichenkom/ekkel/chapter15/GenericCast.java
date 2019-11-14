@@ -6,6 +6,7 @@ class FixedSizeStack<T> {
     private int index = 0;
     private Object[] storage;
 
+
     public FixedSizeStack(int size) {
         storage = new Object[size];
     }
@@ -18,7 +19,12 @@ class FixedSizeStack<T> {
     public T pop() {
         return (T) storage[--index];
     }
+
+    public int getIndex() {
+        return index;
+    }
 }
+
 
 public class GenericCast {
     public static final int SIZE = 10;
@@ -31,6 +37,9 @@ public class GenericCast {
 //        strings.push("M");
 //        Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 10
         //Код проверки границ обязателен
+        if (strings.getIndex() < SIZE) {
+            strings.push("M");
+        }
         for (int i = 0; i < SIZE; i++) {
             String s = strings.pop();
             System.out.print(s + " ");
