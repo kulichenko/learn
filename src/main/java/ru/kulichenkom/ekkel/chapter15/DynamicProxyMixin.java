@@ -1,3 +1,6 @@
+//Ch15Ex39 Добавьте в DynamicProxyMixin.java новый класс примеси Colored.
+//Продемонстрируйте, что он работает.
+///
 //Примеси и динамические заместители (стр580).
 //Из-за ограничений динамических посредников каждый добавляемый класс должен быть реализацией интерфейса
 package ru.kulichenkom.ekkel.chapter15;
@@ -54,13 +57,17 @@ public class DynamicProxyMixin {
         Object mixin = MixinProxy.newInstance(
                 tuple(new BasicImp(), Basic.class),
                 tuple(new TimeStampedImp(), TimeStamped.class),
-                tuple(new SerialNumberedImp(), SerialNumbered.class));
+                tuple(new SerialNumberedImp(), SerialNumbered.class),
+                tuple(new Colored(), Color.class));
         Basic b = (Basic) mixin;
         TimeStamped t = (TimeStamped) mixin;
         SerialNumbered s = (SerialNumbered) mixin;
+        Color color = (Color) mixin;
+        color.setColor("Green");
         b.set("Hello");
         System.out.println(b.get());
         System.out.println(t.getStamp());
         System.out.println(s.getSerialNumber());
+        System.out.println(color.getColor());
     }
 }
