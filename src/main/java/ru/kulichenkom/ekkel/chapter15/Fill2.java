@@ -4,6 +4,10 @@ package ru.kulichenkom.ekkel.chapter15;
 // Using adapters to simulate latent typing.
 // {main: Fill2Test}
 
+import ru.kulichenkom.ekkel.chapter14.pets.Cat;
+import ru.kulichenkom.ekkel.chapter14.pets.Dog;
+import ru.kulichenkom.ekkel.chapter14.pets.Hamster;
+import ru.kulichenkom.ekkel.chapter14.pets.Pet;
 import ru.kulichenkom.ekkel.chapter15.coffee.Coffee;
 import ru.kulichenkom.ekkel.chapter15.coffee.Latte;
 import ru.kulichenkom.ekkel.chapter15.coffee.Mocha;
@@ -17,8 +21,7 @@ interface Addable<T> {
 
 public class Fill2 {
     // Classtoken version:
-    public static <T> void fill(Addable<T> addable,
-                                Class<? extends T> classToken, int size) {
+    public static <T> void fill(Addable<T> addable, Class<? extends T> classToken, int size) {
         for (int i = 0; i < size; i++) {
             try {
                 addable.add(classToken.newInstance());
@@ -29,8 +32,7 @@ public class Fill2 {
     }
 
     // Generator version:
-    public static <T> void fill(Addable<T> addable,
-                                Generator<T> generator, int size) {
+    public static <T> void fill(Addable<T> addable, Generator<T> generator, int size) {
         for (int i = 0; i < size; i++) {
             addable.add(generator.next());
         }
@@ -89,6 +91,30 @@ class Fill2Test {
             System.out.println(c);
     }
 }
+
+//Ch15Ex40 Измените пример Fill2.java, чтобы вместо классов Coffee
+//в нем использовались классы из typeinfo.pets.
+
+class Fill40Test {
+    public static void main(String[] args) {
+        // Adapt a Collection:
+        List<Pet> carrier = new ArrayList<>();
+        Fill2.fill(new AddableCollectionAdapter<Pet>(carrier), Pet.class, 3);
+        // Helper method captures the type:
+        Fill2.fill(Adapter.collectionAdapter(carrier), Dog.class, 2);
+        for (Pet pet : carrier) {
+            System.out.println(pet);
+        }
+        System.out.println("----------------------");
+        // Use an adapted class:
+        AddableSimpleQueue<Pet> petsQueue = new AddableSimpleQueue<>();
+        Fill2.fill(petsQueue, Cat.class, 4);
+        Fill2.fill(petsQueue, Hamster.class, 1);
+        for (Pet pet : petsQueue)
+            System.out.println(pet);
+    }
+}
+
 //: generics/SimpleQueue.java
 // A different kind of container that is Iterable
 
