@@ -9,7 +9,7 @@ import java.util.Arrays;
 
 public class Exercise03 {
     public static double[][] createTwoDirectionArray(int sizeX, int sizeY, double startIndex, double stopIndex) {
-        double[][] doubleArray = new double[sizeY][sizeX];
+        double[][] doubleArray = new double[sizeX][sizeY];
         if (!(startIndex < stopIndex)) {
             System.out.println("Start must be less than end");
             return null;
@@ -18,8 +18,9 @@ public class Exercise03 {
             System.out.println("Size must be > 0");
             return null;
         }
-        for (int i = 0; i < doubleArray.length; i++) {
-            for (int j = 0; j < doubleArray[i].length; j++) {
+
+        for (int i = 0; i < sizeX; i++) {
+            for (int j = 0; j < sizeY; j++) {
                 doubleArray[i][j] = startIndex + (stopIndex - startIndex) / ((i * j) + 1);
             }
         }
@@ -31,7 +32,7 @@ public class Exercise03 {
     }
 
     public static void main(String[] args) {
-        printArray(createTwoDirectionArray(3, 4, 3.1, 4.2));
-        printArray(createTwoDirectionArray(2, 2, 1.1, 1.2));
+        printArray(createTwoDirectionArray(4, 2, 3, 4));
+        printArray(createTwoDirectionArray(2, 2, 1, 2));
     }
 }
