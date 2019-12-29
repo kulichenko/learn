@@ -3,9 +3,9 @@ package ru.kulichenkom;
 import ru.kulichenkom.domain.WheelTyres;
 import ru.kulichenkom.ekkel.chapter2.DataOnlyCh2Ex4;
 import ru.kulichenkom.ekkel.chapter2.EkkelCh2Ex1;
-import ru.kulichenkom.ekkel.chapter2.WheelTyresMain;
 
 public class Main {
+
     public static void main(String[] arg) {
         EkkelCh2Ex1 testObject = new EkkelCh2Ex1();
         DataOnlyCh2Ex4 data = new DataOnlyCh2Ex4();
