@@ -21,7 +21,7 @@ public class Exercise04 {
             FileReader reader = new FileReader(file);
             BufferedReader textBuffer = new BufferedReader(reader);
             String line = textBuffer.readLine();
-            List bufferList = new ArrayList();
+            List<String> bufferList = new ArrayList<>();
             while (line != null) {
                 bufferList.addAll(Arrays.asList(line.split(" ")));
                 line = textBuffer.readLine();
