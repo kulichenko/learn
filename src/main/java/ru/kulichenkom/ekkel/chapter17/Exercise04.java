@@ -8,14 +8,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-public class Exercise04<T> {
+public class Exercise04 {
 
     public static void main(String[] args) {
         Exercise04 exercise04 = new Exercise04();
         System.out.println(exercise04.getTextFromFile("/home/maxim/IdeaProjects/learn/src/main/resources/Chapter17.txt"));
     }
 
-    public Collection<T> getTextFromFile(String pathToFile) {
+    public Collection<String> getTextFromFile(String pathToFile) {
         try {
             File file = new File(pathToFile);
             FileReader reader = new FileReader(file);
